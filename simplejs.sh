@@ -21,5 +21,5 @@ else
    urls_file="/tmp/js_$1.txt"
   
    # Nuclei js files
-   nuclei -l $urls_file -t ~/nuclei-templates/exposures | tee /tmp/nuclei_$1.txt
+   nuclei -silent -l $urls_file -t ~/nuclei-templates/exposures | tee /tmp/nuclei_$1.txt
 fi
