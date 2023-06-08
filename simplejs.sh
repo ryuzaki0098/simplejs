@@ -13,7 +13,7 @@ else
    assetfinder -subs-only $1 | grep $1 | httpx -silent -mc 200 | tee /tmp/subdomains_$1.txt > /dev/null 2>&1
    echo "${BLUE}Saved to /tmp/subdomains_$1.txt ${RESET}"
    echo "${GREEN}[+] Listing js files ${RESET}"
-   cat /tmp/subdomains_$1.txt | unfurl domains | waybackurls | httpx -silent -mc 200 | grep .js | tee /tmp/js_$1.txt > /dev/null 2>&1
+   cat /tmp/subdomains_$1.txt | unfurl domains | waybackurls | grep .js | httpx -silent -mc 200 | tee /tmp/js_$1.txt > /dev/null 2>&1
    echo "${BLUE}Saved to /tmp/js_$1.txt ${RESET}"
    echo "${GREEN}[+] Looking for disclosures${RESET}"
    
